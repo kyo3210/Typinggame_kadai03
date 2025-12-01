@@ -1,5 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
+    font-weight: bold;
     background-color: #f4f4f9;
     color: #333;
     display: flex;
@@ -93,17 +94,17 @@ body {
     justify-content: center;
 }
 
-/* ★★★ 追加: アコーディオン関連のCSS ★★★ */
+/* ★★★ : アコーディオン関連のCSS ★★★ */
     #history-accordion-header {
         cursor: pointer;
         padding: 10px;
-        background-color: #007BFF;
+        background-color: #007bffb6;
         color: rgb(196, 233, 247);
-        border-bottom: 1px solid #ddd;
+        border-bottom: 2px solid #ddd;
         margin-top: 1px;
         text-align: left;
         display: flex;
-        font-size: 18px;
+        font-size: 17px;
     }
     #history-accordion-header h3 {
         margin: 0;
@@ -113,8 +114,8 @@ body {
         align-items: center;
     }
     #accordion-icon {
-        transition: transform 0.3s;
-        font-size: 0.8em;
+        /* transition: transform 0.3s; */
+        font-size: 18px;
     }
 
     #history-accordion-content {
@@ -122,14 +123,16 @@ body {
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
         padding: 0 10px;
-        background-color: #fafbfca7;
+        background-color: #fafbfc7e;
         color: #1d54ed;
         text-align: left;
     }
     #history-accordion-content.open {
-        max-height: 490px; /* 開いたときの最大高さを設定 */
+        max-height: 400px; /* 開いたときの最大高さを設定 */
         padding: 10px;
     }
+
+
     #score-list {
         list-style: none;
         padding: 0;

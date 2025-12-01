@@ -1,22 +1,37 @@
 // 問題文と日本語読み
         let Q1 = [
-            {en: "sushi", ja: "すし"},
+            {en: "susi", ja: "すし"},
             {en: "ebihurai", ja: "エビフライ"},
+            {en: "moti", ja: "餅"},
+            {en: "dojya-su", ja: "ドジャース"},
             {en: "reitoupainn", ja: "冷凍パイン"},
             {en: "udonn", ja: "うどん"},
-            {en: "kukkie", ja: "クッキー"},
+            {en: "kukki-", ja: "クッキー"},
+            {en: "myakumyaku", ja: "ミャクミャク"},
             {en: "takoyaki", ja: "たこやき"},
-            {en: "omuraisu", ja: "オムライス"},
+            {en: "kukki-", ja: "クッキー"},
+            {en: "kawaiidakejyadamedesuka", ja: "かわいいだけじゃダメですか"},
             {en: "soba", ja: "そば"},
             {en: "hannba-gu", ja: "ハンバーグ"},
-            {en: "chawannmushi", ja: "茶わん蒸し"},
+            {en: "haiyorokonde", ja: "はいよろこんで"},
+            {en: "tyawannmusi", ja: "茶わん蒸し"},
             {en: "kokusairengoujidoukikinn", ja: "国際連合児童基金(ﾕﾆｾﾌ)"},
-            {en: "ChikamatsuMonzaemonn", ja: "近松門左衛門※大文字注意"},
+            {en: "TikamatuMonzaemonn", ja: "近松門左衛門※大文字注意"},
             {en: "kamennraida-jiou", ja: "仮面ライダージオウ"},
-            {en: "chihayahuru", ja: "ちはやふる"},
-            {en: "ritomasushikennshi", ja: "リトマス試験紙"},
-            {en: "sekainohatemade-itteQ", ja: "世界の果てまでイッテＱ"},
-            {en: "chiikawa-hachiware", ja: "ちいかわハチワレ"},
+            {en: "tihayahuru", ja: "ちはやふる"},
+            {en: "ritomasusikennsi", ja: "リトマス試験紙"},
+            {en: "sekainohatemade-ittekyu", ja: "世界の果てまでイッテＱ"},
+            {en: "tiikawa-hatiware", ja: "ちいかわハチワレ"},
+            {en: "suto-nnzu", ja: "SixTONES"},
+            {en: "bijyuiijyann", ja: "ビジュイイじゃん"},
+            {en: "sorajiro-", ja: "そらジロー"},
+            {en: "saigono-", ja: "♪最後の～"},
+            {en: "hanabini-", ja: "♪花火に～"},
+            {en: "kotosimo-", ja: "♪今年も～"},
+            {en: "nattana-", ja: "♫なったな～"},
+            {en: "getuyoukarayofukasi", ja: "月曜から夜更かし"},
+            {en: "kyarameruwaginbadorobou", ja: "キャラメルは銀歯ドロボウ"},
+            {en: "arigatouorigotou", ja: "アリガトウオリゴ糖"},
         ];
 
 
@@ -30,18 +45,16 @@
         {en: "by the way", ja: "ところで"}, 
         {en: "carry out", ja: "実行する"}, 
         {en: "come up with", ja: "考え出す"},
-        {en: "Do one’s best", ja: "最善を尽くす※大文字あり"},
         {en: "fall in love", ja: "恋に落ちる"}, 
         {en: "figure out", ja: "理解する"}, 
         {en: "get along with", ja: "仲良くやる"},
         {en: "go ahead", ja: "どうぞ"},
-        {en: "hang out", ja: "遊ぶ"}, 
+        {en: "hang out", ja: "遊ぶ、ぶらぶらする"}, 
         {en: "have a good time", ja: "楽しむ"}, 
         {en: "hold on", ja: "待つ"},
         {en: "keep in touch", ja: "連絡を取り合う"},
         {en: "look forward to", ja: "楽しみにする"}, 
         {en: "make sense", ja: "理にかなっている"}, 
-        {en: "make up one’s mind", ja: "決心する"}, 
         {en: "no wonder", ja: "なるほど"}, 
         {en: "on the other hand", ja: "一方で"}, 
         ];
@@ -282,7 +295,7 @@ let currentQArray = Q1; // 実行中の問題配列を保持
                 // 新しいアニメーションを設定 (7秒かけて画面を横切る)
                 planeEl.style.animation = 'flyAcross 7s linear forwards'; 
                 
-            }, 10000); // 10000ミリ秒 = 15秒
+            }, 15000); // 10000ミリ秒 
         }
 
 
