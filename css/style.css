@@ -1,0 +1,180 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../images/sky.png");
+}
+
+#start-button-v1 {
+    padding: 5px 10px;
+    font-size: 1em;
+    border-color: #9bcef3b0;
+    border-radius: 5px;
+    background-color: #f9fafc1a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.9s;  
+    margin: 20px;  
+}
+
+#start-button-v2 {
+    padding: 5px 10px;
+    font-size: 1em;
+    border-color: #9bcef3b0;
+    border-radius: 7px;
+    background-color: #f9fafc1a;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.9s;    
+}
+
+#start-button:hover {
+    background-color: #0056b3;
+    
+}
+
+#translation-text{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    color: #f4f7f890; 
+}
+
+
+#question-text{
+    font-size: 100px;
+    margin-bottom: 20px;
+    color: #f4f7f890; 
+    font-family: 'Arial Black', sans-serif;       
+    text-shadow: 
+        /* 影1: 上・左 */
+        -3px -3px 10px rgba(197, 207, 248, 0.954), 
+        /* 影2: 上・右 */
+        3px -3px 10px rgba(255, 255, 255, 0.8), 
+        /* 影3: 下・左 */
+        -3px 3px 10px rgba(250, 251, 252, 0.986), 
+        /* 影4: 下・右 */
+        3px 3px 10px rgba(255, 255, 255, 0.8),
+        /* 影5: 中央の濃いぼかし（最も重要） */
+        0 0 20px #fdfeff7e; 
+}
+
+#question-text .typed-char {
+    /* 文字色を完全に透明に設定 */
+    color: transparent !important;
+    /* 影を無効化することで、文字が完全に消える */
+    text-shadow: none !important;
+}
+
+#game-area{
+    margin-top: 220px;
+}
+
+#score{
+    display: flex;
+    color: #f4f7f890; 
+    font-size: 18px;
+    font-weight: bold;
+    align-items: center;
+    height: 30px;
+}
+
+#timer{
+    color: #f4f7f890; 
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+/* ★★★ 追加: アコーディオン関連のCSS ★★★ */
+    #history-accordion-header {
+        cursor: pointer;
+        padding: 10px;
+        background-color: #007BFF;
+        color: rgb(196, 233, 247);
+        border-bottom: 1px solid #ddd;
+        margin-top: 1px;
+        text-align: left;
+        display: flex;
+        font-size: 18px;
+    }
+    #history-accordion-header h3 {
+        margin: 0;
+        font-size: 1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #accordion-icon {
+        transition: transform 0.3s;
+        font-size: 0.8em;
+    }
+
+    #history-accordion-content {
+        max-height: 0; /* デフォルトで非表示 */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out;
+        padding: 0 10px;
+        background-color: #fafbfca7;
+        color: #1d54ed;
+        text-align: left;
+    }
+    #history-accordion-content.open {
+        max-height: 490px; /* 開いたときの最大高さを設定 */
+        padding: 10px;
+    }
+    #score-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    #score-list li {
+        border-bottom: 1px dashed #eee;
+        padding: 5px 0;
+        display: flex;
+        justify-content: space-between;
+    }
+    #score-list li:last-child {
+        border-bottom: none;
+    }
+
+    #delete-scores-button{
+        margin-left: auto;
+        border-radius: 5px;
+        background-color: #fff;
+        border: none;
+        color: #1d54ed;
+        font-weight: bold;
+    }
+
+
+    /* ★★★ 飛行機アニメーション用CSSの追加 ★★★ */
+#flying-plane {
+    position: fixed; /* 画面全体に表示するため固定配置 */
+    top: 50px; /* 画面の上部など、飛行機が通る高さを指定 */
+    right: -200px; /* 初期位置: 画面の右外 */
+    /* font-size: 50px;
+    color: #007bff; 飛行機の色 */
+    z-index: 1000; /* 他の要素より手前に表示 */
+    pointer-events: none; /* クリック操作を妨げないようにする */
+    visibility: hidden; /* デフォルトは非表示 */
+}
+
+/* 飛行機が画面を横切るアニメーション */
+@keyframes flyAcross {
+    0% {
+        transform: translateX(0); /* 右外 */
+        visibility: visible;
+    }
+    100% {
+        transform: translateX(-200vw); /* 画面幅の2倍（画面左外まで）移動 */
+        visibility: hidden;
+    }
+}

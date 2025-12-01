@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>タイピングゲーム</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./js/script.js" defer></script>
+        <!-- //ファビコン呼ばない -->
+    <link rel="shortcut icon" href="">
+
+</head>
+<body>
+
+    <div id="game-area">
+    <div id="question-text" class="initial-message">スタートをクリック！</div>
+        <div id="translation-text" class="initial-message"></div>
+    </div> 
+
+
+    <div>   
+        <button id="start-button-v1">スタート lv小6</button>
+        <button id="start-button-v2">スタート lv中3</button>
+
+    </div>
+
+
+    <div id="score-board">
+        <div id="timer">       
+        <div id="current-timer">残り: 60 秒</div>
+        </div> 
+        <hr>
+        <div id="score">
+        <div id="current-score" class="score-title">スコア: 0 文字</div> 
+        <p>｜</p>
+        <div id="high-score"  class="score-title">ハイスコア: -</div>
+        </div>
+        <hr>
+        <div id="history-accordion-header">
+        <h3>過去スコア（全<span id="history-count">0</span>回） <span id="accordion-icon">▶</span></h3>
+        <button id="delete-scores-button">スコア削除</button>
+
+        </div>
+        
+        <div id="history-accordion-content">
+        <ul id="score-list"> </ul>
+        </div>
+    </div>
+    
+<audio id="correct-se" src="../sounds/pico.mp3" preload="auto"></audio>
+<div id="flying-plane"><img src="../images/plain.png" alt=""></div>
+
+</body>
+</html>
