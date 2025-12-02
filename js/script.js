@@ -7,6 +7,7 @@
             {en: "reitoupainn", ja: "冷凍パイン"},
             {en: "udonn", ja: "うどん"},
             {en: "kukki-", ja: "クッキー"},
+            {en: "gumi", ja: "グミ"},
             {en: "myakumyaku", ja: "ミャクミャク"},
             {en: "takoyaki", ja: "たこやき"},
             {en: "kukki-", ja: "クッキー"},
@@ -16,46 +17,55 @@
             {en: "haiyorokonde", ja: "はいよろこんで"},
             {en: "tyawannmusi", ja: "茶わん蒸し"},
             {en: "kokusairengoujidoukikinn", ja: "国際連合児童基金(ﾕﾆｾﾌ)"},
-            {en: "TikamatuMonzaemonn", ja: "近松門左衛門※大文字注意"},
+            {en: "tikamatumonzaemonn", ja: "近松門左衛門"},
             {en: "kamennraida-jiou", ja: "仮面ライダージオウ"},
             {en: "tihayahuru", ja: "ちはやふる"},
+            {en: "misesuguri-nnappuru", ja: "ミセスグリーンアップル"},
             {en: "ritomasusikennsi", ja: "リトマス試験紙"},
-            {en: "sekainohatemade-ittekyu", ja: "世界の果てまでイッテＱ"},
+            {en: "sekainohatemadeittekyu", ja: "世界の果てまでイッテＱ"},
             {en: "tiikawa-hatiware", ja: "ちいかわハチワレ"},
             {en: "suto-nnzu", ja: "SixTONES"},
             {en: "bijyuiijyann", ja: "ビジュイイじゃん"},
             {en: "sorajiro-", ja: "そらジロー"},
-            {en: "saigono-", ja: "♪最後の～"},
-            {en: "hanabini-", ja: "♪花火に～"},
-            {en: "kotosimo-", ja: "♪今年も～"},
-            {en: "nattana-", ja: "♫なったな～"},
-            {en: "getuyoukarayofukasi", ja: "月曜から夜更かし"},
+            {en: "getuyoukarayohukasi", ja: "月曜から夜更かし"},
             {en: "kyarameruwaginbadorobou", ja: "キャラメルは銀歯ドロボウ"},
-            {en: "arigatouorigotou", ja: "アリガトウオリゴ糖"},
+            {en: "hyakuninnisshu", ja: "百人一首"},
         ];
 
 
         // ★★★ Ver.2: 熟語の配列 (新規) ★★★
     let Q2 = [
         {en: "as well as", ja: "〜と同様に"},
+        {en: "egui", ja: "エグイ(凄い・有り得ない)"},
         {en: "according to", ja: "〜によれば"},
+        {en: "darui", ja: "ダルイ(気が進まない)"},
         {en: "all of a sudden", ja: "突然に"}, 
         {en: "as soon as possible", ja: "できるだけ早く"},
+        {en: "uzai", ja: "ウザイ(煩わしい)"},
         {en: "break the ice", ja: "打ち解ける"},
         {en: "by the way", ja: "ところで"}, 
+        {en: "wanchann", ja: "ワンチャン(もしかしたら)"},
         {en: "carry out", ja: "実行する"}, 
+        {en: "murige-", ja: "無理ゲー(極めて困難)"},
         {en: "come up with", ja: "考え出す"},
         {en: "fall in love", ja: "恋に落ちる"}, 
+        {en: "sorena", ja: "それな(完全同意)"},
         {en: "figure out", ja: "理解する"}, 
         {en: "get along with", ja: "仲良くやる"},
+        {en: "gati", ja: "ガチ(本気)"},
         {en: "go ahead", ja: "どうぞ"},
         {en: "hang out", ja: "遊ぶ、ぶらぶらする"}, 
+        {en: "sikakatann", ja: "～しか勝たん(～が一番最高)"},
         {en: "have a good time", ja: "楽しむ"}, 
+        {en: "inrai", ja: "インライ(Instagramライブ)"},
         {en: "hold on", ja: "待つ"},
         {en: "keep in touch", ja: "連絡を取り合う"},
+        {en: "kamitteru", ja: "神ってる(神懸かっている)"},
         {en: "look forward to", ja: "楽しみにする"}, 
+        {en: "tenage", ja: "テンアゲ(テンションが上がる)"},
         {en: "make sense", ja: "理にかなっている"}, 
         {en: "no wonder", ja: "なるほど"}, 
+        {en: "ri", ja: "り(了解)"},
         {en: "on the other hand", ja: "一方で"}, 
         ];
 
@@ -230,18 +240,6 @@ let currentQArray = Q1; // 実行中の問題配列を保持
                 displayHighScore();
                 scoreEl.innerHTML = `今回スコア: ${totalCorrectChars} 文字`;
             }
-
-        //     if (questionEl) {
-        //         // 再びスタートボタンを表示
-        //         questionEl.innerHTML = `
-        //             <button id="start-button-v1-again" class="start-button">Ver.1: フルーツで再スタート</button>
-        //             <br>
-        //             <button id="start-button-v2-again" class="start-button">Ver.2: 熟語で再スタート</button>`;
-                    
-        //         // 再スタートボタンにイベントリスナーを再設定
-        //         document.getElementById("start-button-v1-again").addEventListener("click", () => startGame(Q1));
-        //         document.getElementById("start-button-v2-again").addEventListener("click", () => startGame(Q2));
-        //     }
         }
 
         function push_Keydown(event) {
@@ -277,8 +275,7 @@ let currentQArray = Q1; // 実行中の問題配列を保持
         }
         
         /**
-    * 10秒に一度、飛行機のアニメーションをトリガーする
-         */
+    * 飛行機のアニメーション         */
         function startPlaneAnimationLoop() {
             const planeEl = document.getElementById('flying-plane');
             if (!planeEl) return;
@@ -289,13 +286,13 @@ let currentQArray = Q1; // 実行中の問題配列を保持
                 // 既存のアニメーションをリセット
                 planeEl.style.animation = 'none'; 
                 
-                // 再描画を強制するための小技 (setTimeoutやrequestAnimationFrameでも可)
+                // 再描画を強制する
                 planeEl.offsetHeight; 
                 
                 // 新しいアニメーションを設定 (7秒かけて画面を横切る)
                 planeEl.style.animation = 'flyAcross 7s linear forwards'; 
                 
-            }, 15000); // 10000ミリ秒 
+            }, 15000); 
         }
 
 
